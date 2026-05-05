@@ -11,6 +11,10 @@ Remove 50% of the context, get 76% accuracy — random removal drops to 52%.
 
 ## Quick Start
 
+```bash
+pip install -r requirements.txt
+```
+
 ```python
 from src.pruner import ContextPruner
 
@@ -20,6 +24,12 @@ pruned = pruner.prune(
     context="Jupiter is the largest planet. Earth is third. Saturn has rings.",
     keep_ratio=0.5
 )
+print(pruned)
+```
+
+**Expected output:**
+```
+Jupiter is the largest planet.
 ```
 
 ## Results on SQuAD (100 samples)
@@ -48,6 +58,8 @@ Evaluated with Qwen2-1.5B-Instruct on 100 SQuAD validation samples.
 ## Installation
 
 ```bash
+git clone https://github.com/kfhua7998/ContextPruner.git
+cd ContextPruner
 pip install -r requirements.txt
 ```
 
@@ -63,6 +75,7 @@ python experiments/run_squad.py
 ContextPruner/
 ├── README.md
 ├── requirements.txt
+├── LICENSE
 ├── src/
 │   ├── __init__.py
 │   └── pruner.py
@@ -76,11 +89,11 @@ ContextPruner/
 
 ```bibtex
 @misc{contextpruner2025,
-  author = {Your Name},
+  author = {Hua, Kefeng},
   title = {ContextPruner: Training-Free Context Pruning for LLMs},
   year = {2025},
   publisher = {GitHub},
-  url = {https://github.com/yourusername/ContextPruner}
+  url = {https://github.com/kfhua7998/ContextPruner}
 }
 ```
 
